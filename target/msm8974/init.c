@@ -110,7 +110,7 @@ uint32_t target_hw_interposer()
 }
 
 /* Return 1 if vol_up pressed */
-static int target_volume_up()
+int target_volume_up()
 {
 	uint8_t status = 0;
 	struct pm8x41_gpio gpio;
@@ -147,6 +147,11 @@ uint32_t target_volume_down()
 		return pm8x41_v2_resin_status();
 	else
 		return pm8x41_resin_status();
+}
+
+int target_power_key(void)
+{
+	return pm8x41_get_pwrkey_is_pressed();
 }
 
 static void target_keystatus()

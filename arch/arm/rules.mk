@@ -100,6 +100,8 @@ OBJS += \
 
 # set the default toolchain to arm eabi and set a #define
 TOOLCHAIN_PREFIX ?= arm-eabi-
+# Custom path for gcc, usage: ~/path/bin/
+TOOLCHAIN_PREFIX := $(TOOLCHAIN_PATH)arm-eabi-
 ifeq ($(TOOLCHAIN_PREFIX),arm-none-linux-gnueabi-)
 # XXX test for EABI better than this
 # eabi compilers dont need this
